@@ -1,0 +1,13 @@
+.venv/
+.cache/
+.env
+__pycache__/
+*.pyc
+eval_results/
+.DS_Store
+*.egg-info/
+build/
+dist/
+
+# Личные материалы, не входящие в репозиторий
+*.docx

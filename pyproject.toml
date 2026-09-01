@@ -1,0 +1,34 @@
+[project]
+name = "inn-finder"
+version = "0.1.0"
+description = "Агентный пайплайн: ИНН российской организации -> домен официального сайта или null"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+    "pydantic>=2.7",
+    "selectolax>=0.3.21",
+    "tldextract>=5.1",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5"]
+
+[project.scripts]
+inn-finder = "inn_finder.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["inn_finder*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "SIM", "I", "UP"]
+ignore = ["E501"]
